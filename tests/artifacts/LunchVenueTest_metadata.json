@@ -1,0 +1,593 @@
+{
+	"compiler": {
+		"version": "0.8.5+commit.a4f2e591"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "friendAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"name": "addFriend",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"name": "addRestaurant",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "beforeAll",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "cancelVoting",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "cancelVotingFailure",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "cancelVotingSuccess",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "constructorTest",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "restaurant",
+						"type": "uint256"
+					}
+				],
+				"name": "doVote",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "validVote",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "doVoteFailure0",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "doVoteFailure1",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "friends",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "voted",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "lunchVenueResult",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "manager",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "managerTest",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "numFriends",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "numRestaurants",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "numVotes",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "restaurants",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "setFriend",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "setFriendFailure",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "setRestaurant",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "setRestaurantFailure2",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "setSameFriend",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "setSameRestaurant",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "setVotingState",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "startVoting",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "state",
+				"outputs": [
+					{
+						"internalType": "enum LunchVenueUpdated.State",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "vote1",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "vote2",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "vote3",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "vote4",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "voteAfterClosedFailure",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "voteAfterClosedFailure2",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "voteFailure",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "voteFailure2",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "voteFailure3",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "voteOpen",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "votedRestaurant",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "votes",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "voterAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "restaurant",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"addFriend(address,string)": {
+					"details": "To simplify the code duplication of friends is not checked",
+					"params": {
+						"friendAddress": "Friend’s account/address",
+						"name": "Friend ’s name"
+					},
+					"returns": {
+						"_0": "Number of friends added so far"
+					}
+				},
+				"addRestaurant(string)": {
+					"details": "To simplify the code, duplication of restaurants isn’t checked",
+					"params": {
+						"name": "Restaurant name"
+					},
+					"returns": {
+						"_0": "Number of restaurants added so far"
+					}
+				},
+				"cancelVoting()": {
+					"details": "Only the manager can cancel the voting"
+				},
+				"doVote(uint256)": {
+					"details": "To simplify the code duplicate votes by a friend is not checked ",
+					"params": {
+						"restaurant": "Restaurant number being voted"
+					},
+					"returns": {
+						"validVote": "Is the vote valid? A valid vote should be from a registered friend to a registered restaurant"
+					}
+				},
+				"startVoting()": {
+					"details": "Only the manager can start the voting"
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"addFriend(address,string)": {
+					"notice": "Add a new friend to voter list"
+				},
+				"addRestaurant(string)": {
+					"notice": "Add a new restaurant"
+				},
+				"beforeAll()": {
+					"notice": "’beforeAll’ runs before all other tests More special functions are: ’beforeEach’, ’beforeAll’, ’afterEach’ & ’afterAll’"
+				},
+				"cancelVoting()": {
+					"notice": "Cancel the voting"
+				},
+				"cancelVotingFailure()": {
+					"notice": "Cancel voting as a user other than manager. This should fail. #sender: account-1 (Bob)"
+				},
+				"constructorTest()": {
+					"notice": "Constructor Check"
+				},
+				"doVote(uint256)": {
+					"notice": "Vote for a restaurant"
+				},
+				"doVoteFailure0()": {
+					"notice": "No one can vote during Creating state #sender: account-0 (Alice)"
+				},
+				"doVoteFailure1()": {
+					"notice": "No one can vote during Creating state #sender: account-1 (Bob)"
+				},
+				"lunchVenueResult()": {
+					"notice": "Verify lunch venue is set correctly."
+				},
+				"managerTest()": {
+					"notice": "Check manager account-0 is the default account that deploy contract, so it should be the manager (i.e., acc0)"
+				},
+				"setFriend()": {
+					"notice": "Set friends as account-0 (Alice) #sender doesn’t need to be specified explicitly for account-0"
+				},
+				"setFriendFailure()": {
+					"notice": "Try adding friend as a user other than manager. This should fail #sender: account-1 (Bob)"
+				},
+				"setRestaurant()": {
+					"notice": "Add restaurant as manager When msg.sender isn’t specified, default account (i.e., account-0) is the sender"
+				},
+				"setRestaurantFailure2()": {
+					"notice": "Try to add a restaurant as a user other than manager. This should fail #sender: account-1 (Bob)"
+				},
+				"setSameFriend()": {
+					"notice": "Try to add the same friend again. The latter should fail to add"
+				},
+				"setSameRestaurant()": {
+					"notice": "Try to add the same restaurant again. The latter should fail to add"
+				},
+				"setVotingState()": {
+					"notice": "Set to voting state #sender: account-0 (Alice)"
+				},
+				"startVoting()": {
+					"notice": "Start the voting"
+				},
+				"vote1()": {
+					"notice": "Try voting as a user not in the friends list. This should fail. Vote as Bob (acc1) #sender: account-1 (Bob)"
+				},
+				"vote2()": {
+					"notice": "Vote as Charlie #sender: account-2 (Charlie)"
+				},
+				"vote3()": {
+					"notice": "Vote as Dave #sender: account-3 (Dave)"
+				},
+				"vote4()": {
+					"notice": "ISSUE_6: Testing restaurant with invalid number"
+				},
+				"voteAfterClosedFailure()": {
+					"notice": "Verify voting after vote closed. This should fail Voted by Alice (who previous has not voted before finalize)"
+				},
+				"voteAfterClosedFailure2()": {
+					"notice": "Verify voting after vote closed. This should fail #sender: account-2 (Charlie)"
+				},
+				"voteFailure()": {
+					"notice": "Try voting as a user not in the friends list. This should fail. #sender: account-5 (John)"
+				},
+				"voteFailure2()": {
+					"notice": "Try voting for a restaurant not in the restaurant list. This should fail. #sender: account-3 (Dave)"
+				},
+				"voteFailure3()": {
+					"notice": "Vote again from Charlie #sender: account-2 (Charlie)"
+				}
+			},
+			"notice": "Inherit ’LunchVenue’ contract",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"tests/LunchVenue_updated_test.sol": "LunchVenueTest"
+		},
+		"evmVersion": "berlin",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/LunchVenue_updated.sol": {
+			"keccak256": "0x0856616162a7ed581643dc6b02bbc1af976b08b6e2bdc2439a41cdd41c4f6338",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://738165a599155f9450a5e45d06edafa4a91bbb8f7f288e12e0b38fad0cd762f1",
+				"dweb:/ipfs/QmPPXsa6d4QzFUicT7PHC5K8Ya54asiDana3tQR7BrvhBA"
+			]
+		},
+		"remix_accounts.sol": {
+			"keccak256": "0x722e8fd271de98c2d980bda8e3d011551d9641355216b1029084b455c4c2a662",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://8e57585c7061065613c796706efdae0c79a416bde447ccbe4ffaf969aeb7423e",
+				"dweb:/ipfs/QmdQCAgvob9suV3UwSR2rRetyU9fafTtEi2sDv9oRmRSLo"
+			]
+		},
+		"remix_tests.sol": {
+			"keccak256": "0xe2783cdc204cba8c72494119339f1d90f9022b15d6c718c668b7f097d8e29787",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://bb6a22e64c7f16bcaab63b1c1a1b269d5be8a6d37bdd9dec1718477ab916b18e",
+				"dweb:/ipfs/QmdkW1tT5iadBvaHMCoskhDGZKnfdg8o1D9CcoQYtdJet7"
+			]
+		},
+		"tests/LunchVenue_updated_test.sol": {
+			"keccak256": "0x5f9428f48b9c6355671b29b6c622fd3fe2e6a91f99759924ce77096793200280",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://b910a2b3b95f187787cd640545da851b59b68f9d8a48055d6ba35f273fe21fd0",
+				"dweb:/ipfs/QmPTZ3YoG3bzjNGSGTP8t1Bo2xWweuAdhnS18JQjHYsZQ6"
+			]
+		}
+	},
+	"version": 1
+}

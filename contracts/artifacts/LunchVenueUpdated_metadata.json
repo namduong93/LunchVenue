@@ -1,0 +1,342 @@
+{
+	"compiler": {
+		"version": "0.8.5+commit.a4f2e591"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "friendAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"name": "addFriend",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"name": "addRestaurant",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "cancelVoting",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "restaurant",
+						"type": "uint256"
+					}
+				],
+				"name": "doVote",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "validVote",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "friends",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "voted",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "manager",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "numFriends",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "numRestaurants",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "numVotes",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "restaurants",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "startVoting",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "state",
+				"outputs": [
+					{
+						"internalType": "enum LunchVenueUpdated.State",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "voteOpen",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "votedRestaurant",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "votes",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "voterAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "restaurant",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"author": "Dilum Bandara , CSIRO’s Data61 Edited by: Van Nam Duong, UNSW (z5412692) to fix the following issues",
+			"details": "Issue known: 1. A friend can vote more than once. While this was handy in testing our contract, it is undesirable as one could monopolise the selected venue.    Ideally, we should record a vote for a given address only once.    - doVote function now checks if friends[msg.sender] == false to allow voting 2. The same restaurant and friend can be added multiple times leading to similar issues.    - Go through list of restaurants that are currently open and determine if the restaurant already exists    - Go through list of friends that are currently open and determine if the friend already exists 3. While the contract is stuck at the doVote function, other functions can still be called. Also, once the voting starts, new venues and friends    can be added, making the whole process chaotic. In a typical voting process, voters are clear about who would vote and what to vote on before    voting starts to prevent any disputes. Hence, a good vote process should have well-defined create, vote open, and vote close phases.    - Created a state enum variable to record the contract's current status (Creating, Voting, Closed).    - Added modifiers to limit the states in which functions can be called 4. There is no way to disable the contract once it is deployed. Even the manager cannot do anything to stop the contract in case the team lunch    has to be cancelled.    - Added `Cancelled State` to keep track the state has been cancelled     - Added `cancelVote` function to allow the manager to cancel the contract 5. Gas consumption is not optimised. More simple data structures may help to reduce transaction fees.    - Added `unchecked` for incrementing variable i in for loops    - Removed initialisation of variable of 0 as public global variable are 0, or empty string    - Immutable (constant) type for manager variable since it will not be modified after contract construction    - Rearranged the order of state variables, state variable and address variable are placed together to use one slot. 6. Bonus: Unit Test do not cover all possible cases, e.g., we do not check the doVote function with an invalid restaurant number    - Fixed in Testing To show the bugs are fixed Address: https://sepolia.etherscan.io/address/0xb107c50e3e771a2b2200591262f0759c9a93d8bc Manager: 0x14F35082e87F9c09797443A1E591C26fA5784aDc Alice: 0x9e0E6C08B59942207137A731bB64ECd124565697 Bob: 0x7cad0Db1199CEC9a688a520565c9ccc577A2D71b  Bug 1: - Bob vote but fail because he is not a friend   https://sepolia.etherscan.io/tx/0x9176ab6c7a76edd140868106db5331e5433b9213132ec8010afefabf78d75f7c Bug 2: - Add Alice:   https://sepolia.etherscan.io/tx/0xa3c45b7c32a80444f46556bd6329e196e8f7ce2be81e41da883a5f3e10b082e6 - Add Alice again but fail with \"Friend address already exists\"   https://sepolia.etherscan.io/tx/0x10776fd15607935f1db6dfd4eee78daf8eb9e96c4be6905348af229737ac3d0f Bug 3: - Alice tried to vote in the Creating State but failed.   https://sepolia.etherscan.io/tx/0xce09ef8eef423c713fc90ea3f8bff1721e7abd334e21a70db3fa98d5a7b18e7b - Manager then open Voting State   https://sepolia.etherscan.io/tx/0xb4807101db1e69ab09b9a4dfe1e9cbab83b40eaca5fd55a0e7c5fdb4564dbd2b - Alice try to vote again and success: .  https://sepolia.etherscan.io/tx/0x57633c13be1e8d0f5be52f7296b1580cf340e154471d821882780be1946f0003 Bug 4: - Alice can not cancel Voting as a friend but not a manager.   https://sepolia.etherscan.io/tx/0xa262a4f725c2e728d89c000f6a38028fabeb56ed975492870adce4bb08c43dbe - Only Manager can cancel voting   https://sepolia.etherscan.io/tx/0x7bf8102e477ae3cf4183d00a996aa9d35743a030f579adeada64249cc2a038ea Bug 5:  - Gas reduce from 40000 - 60000 in LunchVenue.sol to 26000 average in LunchVenue_updated.sol Bug 6: Can not vote invalid number ( can not vote restaurant with id 10 but only have 2 restaurants)",
+			"kind": "dev",
+			"methods": {
+				"addFriend(address,string)": {
+					"details": "To simplify the code duplication of friends is not checked",
+					"params": {
+						"friendAddress": "Friend’s account/address",
+						"name": "Friend ’s name"
+					},
+					"returns": {
+						"_0": "Number of friends added so far"
+					}
+				},
+				"addRestaurant(string)": {
+					"details": "To simplify the code, duplication of restaurants isn’t checked",
+					"params": {
+						"name": "Restaurant name"
+					},
+					"returns": {
+						"_0": "Number of restaurants added so far"
+					}
+				},
+				"cancelVoting()": {
+					"details": "Only the manager can cancel the voting"
+				},
+				"constructor": {
+					"details": "Set manager when contract starts"
+				},
+				"doVote(uint256)": {
+					"details": "To simplify the code duplicate votes by a friend is not checked ",
+					"params": {
+						"restaurant": "Restaurant number being voted"
+					},
+					"returns": {
+						"validVote": "Is the vote valid? A valid vote should be from a registered friend to a registered restaurant"
+					}
+				},
+				"startVoting()": {
+					"details": "Only the manager can start the voting"
+				}
+			},
+			"title": "Contract to agree on the lunch venue",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"addFriend(address,string)": {
+					"notice": "Add a new friend to voter list"
+				},
+				"addRestaurant(string)": {
+					"notice": "Add a new restaurant"
+				},
+				"cancelVoting()": {
+					"notice": "Cancel the voting"
+				},
+				"doVote(uint256)": {
+					"notice": "Vote for a restaurant"
+				},
+				"startVoting()": {
+					"notice": "Start the voting"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/LunchVenue_updated.sol": "LunchVenueUpdated"
+		},
+		"evmVersion": "berlin",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/LunchVenue_updated.sol": {
+			"keccak256": "0x0856616162a7ed581643dc6b02bbc1af976b08b6e2bdc2439a41cdd41c4f6338",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://738165a599155f9450a5e45d06edafa4a91bbb8f7f288e12e0b38fad0cd762f1",
+				"dweb:/ipfs/QmPPXsa6d4QzFUicT7PHC5K8Ya54asiDana3tQR7BrvhBA"
+			]
+		}
+	},
+	"version": 1
+}
